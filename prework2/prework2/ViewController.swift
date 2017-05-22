@@ -9,9 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     //MARK: Properties
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,14 @@ class ViewController: UIViewController {
 
     //MARK: Actions
     
-    
+    @IBAction func setLabel(_ sender: UIButton) {
+        if name.text == "Nathan Justin" {
+            name.text = "is excited for iX!"
+        }
+        else {
+            name.text = "Nathan Justin"
+        }
+    }
+
 }
 
