@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,17 +22,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nathan Justin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYY-PF-cQD">
-                                <rect key="frame" x="16" y="78" width="174" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="RTQ-RO-bhJ">
+                                <rect key="frame" x="16" y="70" width="343" height="62.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nathan Justin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYY-PF-cQD">
+                                        <rect key="frame" x="0.0" y="0.0" width="166" height="32.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4T-r7-dmi">
+                                        <rect key="frame" x="0.0" y="32.5" width="86" height="30"/>
+                                        <state key="normal" title="Change Text"/>
+                                        <connections>
+                                            <action selector="setLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2yy-Eb-u5Z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="y4T-r7-dmi" secondAttribute="bottom" constant="10" id="Pbq-RH-ZzQ"/>
+                                    <constraint firstItem="y4T-r7-dmi" firstAttribute="top" secondItem="iYY-PF-cQD" secondAttribute="bottom" id="cq6-fl-64j"/>
+                                    <constraint firstItem="y4T-r7-dmi" firstAttribute="top" secondItem="iYY-PF-cQD" secondAttribute="bottom" constant="10" id="p27-10-ESG"/>
+                                    <constraint firstAttribute="bottom" secondItem="y4T-r7-dmi" secondAttribute="bottom" id="tKS-8J-dlH"/>
+                                    <constraint firstAttribute="bottom" secondItem="y4T-r7-dmi" secondAttribute="bottom" id="tT8-Yb-4Ex"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RTQ-RO-bhJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Oyj-DL-uEs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RTQ-RO-bhJ" secondAttribute="trailing" id="e9N-O9-tuV"/>
+                            <constraint firstItem="RTQ-RO-bhJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="pDk-kw-NyP"/>
+                            <constraint firstItem="RTQ-RO-bhJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="xdK-uq-6Bm"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="button" destination="y4T-r7-dmi" id="yuy-0W-Ju6"/>
                         <outlet property="name" destination="iYY-PF-cQD" id="sLi-yX-ouF"/>
                     </connections>
                 </viewController>
